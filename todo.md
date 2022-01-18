@@ -8,4 +8,4 @@
 # Purlou
 1. Combine images
 2. Add text and links to the rest of the empty pages
-3. 
+
