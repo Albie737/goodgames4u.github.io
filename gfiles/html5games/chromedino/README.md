@@ -1,44 +1,39 @@
-## t-rex-runner
+# cookieclicker
 
-the trex runner game extracted from chrome offline err page.
+<img src="img/perfectCookie.png" width="128">
 
-see the [source](https://cs.chromium.org/chromium/src/components/neterror/resources/offline.js?q=t-rex+package:%5Echromium$&dr=C&l=7) from chromium
+The original game can be found at http://orteil.dashnet.org/cookieclicker/
 
+This mirror for, errrr, like, educational purpose, either to download for your own offline education or to be played online from http://ozh.github.io/cookieclicker/ if you cannot "educate" yourself on the original URL
 
-[go and enjoy! :smile: ](http://wayou.github.io/t-rex-runner/)
+### How to update
 
-![chrome offline game cast](assets/screenshot.gif)
+If the original game updates, here is how you can update the mirror:
 
-## Interesting Forks/In Chinese, we call it 「花样玩法」
+#### 1. Fetch all new images :
 
-- [vianroyal](https://github.com/vianroyal)/[t-rex-runner](https://github.com/vianroyal/t-rex-runner) [Kumamon runner](http://vianroyal.github.io/t-rex-runner/) 
-<br>
+from the `/img/` directory :
 
-![](assets/kumamon-runner.gif)
+* `wget --convert-links -O index.html http://orteil.dashnet.org/cookieclicker/img/`
+* `grep -o 'href="[^/?"]*' index.html | sed 's/href="//' | sed 's/Thumbs.db//' | sed '/^[[:space:]]*$/d'> list.txt`
+* `wget -N -i list.txt -B http://orteil.dashnet.org/cookieclicker/img/`
 
-- [xkuga](https://github.com/xkuga)/[t-rex-runner](https://github.com/xkuga/t-rex-runner) [Hello KuGou](http://hellokugou.com/) 
-<br>
+#### 2. Fetch all new sounds :
 
-![](assets/hello-kugou.gif)
+Similarly, from the `/snd/` directory :
 
-- [d-nery](https://github.com/d-nery/)/[t-rex-runner](https://github.com/d-nery/t-rex-runner) [Novas coisas](http://d-nery.github.io/t-rex-runner/) 
-<br>
+* `wget --convert-links -O index.html http://orteil.dashnet.org/cookieclicker/snd/`
+* `grep -o 'href="[^/?"]*' index.html | sed 's/href="//' | sed 's/Thumbs.db//' | sed '/^[[:space:]]*$/d'> list.txt`
+* `wget -N -i list.txt -B http://orteil.dashnet.org/cookieclicker/snd/`
 
-![](assets/novas-coisas.gif)
+#### 3. Update `js` and `html` files :
 
-- [chirag64](https://github.com/chirag64)/[t-rex-runner-bot](https://github.com/chirag64/t-rex-runner-bot) [t-rex runner bot](https://chirag64.github.io/t-rex-runner-bot/) 
-<br>
+From the root directory :
 
-![](assets/t-rex-runner-bot.gif)
+* Fetch updated `js` files : `wget -N -i list.txt -B http://orteil.dashnet.org/cookieclicker/`
+* Fetch the updated `index.html` file
+* Scan `index.html` for any new `<script src` and also `main.js` for any new local javascript (eg `Game.last.minigameUrl`)
 
-- [19janil](https://github.com/19janil)/[t-rex-runner](https://github.com/19janil/t-rex-runner) [t-rex runner](https://19janil.github.io/t-rex-runner/) 
-<br>
+#### 4. Report update here :)
 
-![](assets/t-rex-runner-19janil.gif)
-
-- [enthus1ast](https://github.com/enthus1ast)/[chromeTrip](https://github.com/enthus1ast/chromeTrip) [Chrome Trip by code0](https://code0.itch.io/chrome-trip) 
-<br>
-
-![](https://user-images.githubusercontent.com/13794470/37289691-964618be-260a-11e8-8c4a-6df04d6c490d.gif)
-
-
+If you happen to update, please make a pull request for others to benefit, thanks!
