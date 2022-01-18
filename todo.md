@@ -4,8 +4,6 @@
 2. Chatroom
 3. Tools
 4. Pastebin
-5. Add 404 page
-6. Add 403 page
 
 # Purlou
 1. Combine images
